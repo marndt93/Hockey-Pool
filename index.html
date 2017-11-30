@@ -1,0 +1,107 @@
+<?php
+	$nhl_scores = 'https://nhl-score-api.herokuapp.com/api/scores/latest';
+	$scores_json = file_get_contents($nhl_scores);
+	$scores_array = json_decode($scores_json, true);
+	
+?>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf8">
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>2017 Playoff Pool</title>
+        <link rel="icon" type="image/ico" href="images/icon.ico">
+		<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+	 	
+	 	<link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body class = "home">
+		<div id = "menu">
+	 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	  	<script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	  	
+		<br/>
+	     <!-- Static navbar -->
+	      <nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<img src="images/cupLogo.png" class="pull-left"
+					alt="Stanley Cup 2016" style="width: 50px; height: 50px;" /> <a
+					class="navbar-brand" href="#">Arndt Playoff Pool</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="playoff.html">NHL Standings</a></li>
+					<li><a href="pool.html">Pool Stats</a></li>
+					<li><a href="submit.html">Submit Picks</a></li>
+				</ul>
+			</div>
+	          <!--/.nav-collapse -->
+		</div>
+		<!--/.container-fluid -->
+	      </nav>
+		  <div id="header"></div>
+		 </div>
+		
+		<div class="line"></div>
+		<div id="article" class="container-fluid">
+			<div class="col-xs-12">
+				<h2>2017 Playoff Pool</h2>
+				<figure>			
+					<img src="images/winner2016.jpg" alt="Last Year's Winners" style="width:300px;height:200px;padding-bottom: 0px;">
+					<figcaption>Last year's winners</figcaption>
+				</figure>
+				<br>
+				<br>
+				<br>
+				<br>
+				<p>Welcome to the 2017 Arndt playoff pool.  
+				<br>
+				<br>
+				<p>The rules for this year will be the same as last year.  Everyone playing will submit their picks before any games of the playoff round begin.  
+				<p>Players can submit their picks with the form on the 'submit picks' page.  If you want to change your picks before any games have started, 
+				just resubmit your picks with the form.  I will use your latest entry in the database when putting together the spreadsheet.
+				<p>The scoring system will be the same as last year.  You will get 3 points for calling the correct number of games.  You will also get 10 points for calling the correct team for the first and second round, and 12 points for calling the correct team in the third and fourth round.
+				
+				<br>
+				<!--<p>Thanks for participating in the playoff pool this year!  Congratulations to Al and Sharon for winning the pool this year.  
+				<p>The final standings are:
+				<br>
+				<br>127 - Al and Sharon
+				<br>113 - Josh
+				<br>112 - Liam
+				<br>109 - Tuzee
+				<br>103 - Tom
+				<br>101 - Avril
+				<br> 99 - Greg
+				<br> 98 - Brad
+				<br> 98 - Emily
+				<br> 96 - Dylan
+				<br> 94 - Nathan
+				<br> 91 - Justin
+				<br> 85 - Mark
+				<br> 85 - Matt
+				<br> 84 - Amy
+				<br> 76 - Lucas
+				<br> 63 - Rachel
+				<br> 58 - Jordan
+				<br> 43 - Christian-->
+				<//?php
+					foreach($scores_array as $scores){
+						echo $scores;
+					}
+				?>
+			</div?
+		</div>
+	</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2017 Playoff Pool</title>
+<link rel="icon" type="image/ico" href="images/icon.ico">
+<!-- 
+        Disabling old styles stuff for now so you can see bootstrap in action.  Put back and clean up later
+	     if you wish...
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+		<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+ -->
+<link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+
+	<br />
+	<!-- Static navbar -->
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<img src="images/cupLogo.png" class="pull-left"
+					alt="Stanley Cup 2016" style="width: 50px; height: 50px;" /> <a
+					class="navbar-brand" href="#">Arndt Playoff Pool</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="playoff.html">NHL Standings</a></li>
+					<li><a href="pool.html">Pool Stats</a></li>
+					<li class="active"><a href="submit.html">Submit Picks</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+		<!--/.container -->
+	</nav>
+	<div id="header"></div>
+	<div class="line"></div>
+	<div id="article" class="container">
+		<!--<h2>Please fill out the form below to submit your picks.</h2>-->
+		<br>
+		<h3>Submit Round 3 Picks before 9:00pm EST Friday, May 12<sup>th</sup> </h3>
+		<br>
+		<!--FORM-->
+		<form action="insert.php" method="post" role="form">
+			<!--name textbox-->
+			<p>
+				Name: <input type="text" name="name" placeholder="enter name">
+			</p>
+			<!--favourite team textbox-->
+			<p>
+				Team: <input type="text" name="favTeam"
+					placeholder="enter team cheering for" style="margin-left: 3px;"
+>
+			</p>
+			<br> <br>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-lg-6">
+							<!--<h4>Eastern Conference:</h4>-->
+							<h4>Eastern Conference:</h4>
+						</div>
+					</div>
+					<!--Series East 1-->
+					<div class="row">
+						<div class="col-lg-12">
+	 						<div class="col-lg-12">Ottawa Senators vs Pittsburgh Penguins</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label> Team:</label> <select name="pick1" class="form-control" style="width=200px;">
+									<option value="" disabled selected>-- Choose Team --</option>
+									<option value="Ottawa Senators">Ottawa Senators</option>
+									<option value="Pittsburgh Penguins">Pittsburgh Penguins</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label>Number of Games:</label> <select name="games1"
+									class="form-control">
+									<option value="" disabled selected>-- Choose # of
+										Games --</option>
+									<option value="4 Games">4 Games</option>
+									<option value="5 Games">5 Games</option>
+									<option value="6 Games">6 Games</option>
+									<option value="7 Games">7 Games</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<!--Series East 2->
+					<div class="row">
+						<div class="col-lg-12">
+	 						<div class="col-lg-12">Washington Capitals vs Pittsburgh Penguins</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label> Team:</label> <select name="pick2" class="form-control" style="width=200px;">
+									<option value="" disabled selected>-- Choose Team --</option>
+									<option value="Washington Capitals">Washington Capitals</option>
+									<option value="Pittsburgh Penguins">Pittsburgh Penguins</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label>Number of Games:</label> <select name="games2"
+									class="form-control">
+									<option value="" disabled selected>-- Choose # of
+										Games --</option>
+									<option value="4 Games">4 Games</option>
+									<option value="5 Games">5 Games</option>
+									<option value="6 Games">6 Games</option>
+									<option value="7 Games">7 Games</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<!--Series East 3--
+					
+					<div class="row">
+						<div class="col-lg-12">
+	 						<div class="col-lg-12">Washington Capitals vs Toronto Maple Leafs</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label> Team:</label> <select name="pick3" class="form-control" style="width=200px;">
+									<option value="" disabled selected>-- Choose Team --</option>
+									<option value="Washington Capitals">Washington Capitals</option>
+									<option value="Toronto Maple Leafs">Toronto Maple Leafs</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label>Number of Games:</label> <select name="games3"
+									class="form-control">
+									<option value="" disabled selected>-- Choose # of
+										Games --</option>
+									<option value="4 Games">4 Games</option>
+									<option value="5 Games">5 Games</option>
+									<option value="6 Games">6 Games</option>
+									<option value="7 Games">7 Games</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<!--Series East 4--
+					
+					<div class="row">
+						<div class="col-lg-12">
+	 						<div class="col-lg-12">Pittsburgh Penguins vs Columbus Blue Jackets</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label> Team:</label> <select name="pick4" class="form-control" style="width=200px;">
+									<option value="" disabled selected>-- Choose Team --</option>
+									<option value="Pittsburgh Penguins">Pittsburgh Penguins</option>
+									<option value="Columbus Blue Jackets">Columbus Blue Jackets</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label>Number of Games:</label> <select name="games4"
+									class="form-control">
+									<option value="" disabled selected>-- Choose # of
+										Games --</option>
+									<option value="4 Games">4 Games</option>
+									<option value="5 Games">5 Games</option>
+									<option value="6 Games">6 Games</option>
+									<option value="7 Games">7 Games</option>
+								</select>
+							</div>
+						</div>
+					</div>-->
+					
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-lg-6">
+							<h4>Western Conference:</h4>
+						</div>
+					</div>
+					<!--Series west 1-->
+					<div class="row">
+						<div class="col-lg-12">
+	 						<div class="col-lg-12">Nashville Predators vs Aneheim Ducks</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label> Team:</label> <select name="pick5" class="form-control" style="width=200px;">
+									<option value="" disabled selected>-- Choose Team --</option>
+									<option value="Nashville Predators">Nashville Predators</option>
+									<option value="Aneheim Ducks">Aneheim Ducks</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label>Number of Games:</label> <select name="games5"
+									class="form-control">
+									<option value="" disabled selected>-- Choose # of
+										Games --</option>
+									<option value="4 Games">4 Games</option>
+									<option value="5 Games">5 Games</option>
+									<option value="6 Games">6 Games</option>
+									<option value="7 Games">7 Games</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<!--Series west 2->
+					<div class="row">
+						<div class="col-lg-12">
+	 						<div class="col-lg-12">Aneheim Ducks vs Edmonton Oilers</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label> Team:</label> <select name="pick6" class="form-control" style="width=200px;">
+									<option value="" disabled selected>-- Choose Team --</option>
+									<option value="Aneheim Ducks">Aneheim Ducks</option>
+									<option value="Edmonton Oilers">Edmonton Oilers</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label>Number of Games:</label> <select name="games6"
+									class="form-control">
+									<option value="" disabled selected>-- Choose # of
+										Games --</option>
+									<option value="4 Games">4 Games</option>
+									<option value="5 Games">5 Games</option>
+									<option value="6 Games">6 Games</option>
+									<option value="7 Games">7 Games</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<!--Series west 3--
+					
+					<div class="row">
+						<div class="col-lg-12">
+	 						<div class="col-lg-12">Aneheim Ducks vs Calgary Flames</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label> Team:</label> <select name="pick7" class="form-control" style="width=200px;">
+									<option value="" disabled selected>-- Choose Team --</option>
+									<option value="Aneheim Ducks">Aneheim Ducks</option>
+									<option value="Calgary Flames">Calgary Flames</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label>Number of Games:</label> <select name="games7"
+									class="form-control">
+									<option value="" disabled selected>-- Choose # of
+										Games --</option>
+									<option value="4 Games">4 Games</option>
+									<option value="5 Games">5 Games</option>
+									<option value="6 Games">6 Games</option>
+									<option value="7 Games">7 Games</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<!--Series west 4--
+					
+					<div class="row">
+						<div class="col-lg-12">
+	 						<div class="col-lg-12">Edmonton Oilers vs San Jose Sharks</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label> Team:</label> <select name="pick8" class="form-control" style="width=200px;">
+									<option value="" disabled selected>-- Choose Team --</option>
+									<option value="Edmonton Oilers">Edmonton Oilers</option>
+									<option value="San Jose Sharks">San Jose Sharks</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<div class="form-group">
+								<label>Number of Games:</label> <select name="games8"
+									class="form-control">
+									<option value="" disabled selected>-- Choose # of
+										Games --</option>
+									<option value="4 Games">4 Games</option>
+									<option value="5 Games">5 Games</option>
+									<option value="6 Games">6 Games</option>
+									<option value="7 Games">7 Games</option>
+								</select>
+							</div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+			<input type="submit" name="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html>
